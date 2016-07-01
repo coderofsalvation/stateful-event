@@ -1,0 +1,15 @@
+{
+  "name": "stateful-event",
+  "version": "1.0.0",
+  "description": "a tiny stateful eventbus in few lines of js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "build": "minify index.js > dist/bus.min.js"
+  },
+  "author": "coderofsalvation",
+  "license": "ISC"
+}
