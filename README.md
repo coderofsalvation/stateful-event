@@ -1,6 +1,6 @@
 a tiny stateful eventbus in few lines of js
 
-\![Build Status](https://travis-ci.org/coderofsalvation/stateful-event.svg?branch=master)
+![Build Status](https://travis-ci.org/coderofsalvation/stateful-event.svg?branch=master)
 
 ## Usage
 
@@ -9,7 +9,7 @@ a tiny stateful eventbus in few lines of js
     var bus   = new se()
     bus.debug = true                                      // will output publish() calls in console
 
-    var x = bus.subscribe("someprocess/form/start", function(data, state){
+    var x = bus.subscribe("someprocess/start", function(data, state){
       if( state == "offline" ) return
       // do stuff 
     })
@@ -23,7 +23,7 @@ a tiny stateful eventbus in few lines of js
     bus.publish("someprocess/start",{foo:"bar"})          // will fire doFoo()
     bus.state("offline")                                  // set state to online
     bus.publish("someprocess/start",{foo:"bar"})          // won't fire doFoo
-    bus.publish("someprocess/start",{foo:"bar"},"online") // won't fire doFoo, sets state to "online", prints "foooooo!"
+    bus.publish("someprocess/start",{foo:"bar"},"online") // set state to "online", and will fire doFoo
     bus.publish("someprocess/start",{foo:"bar"})          // will fire doFoo()
     console.log( bus.state() )                            // will return "online"
     bus.state("cleanup")                                  // will trigger bus.unsubscribe(x)
