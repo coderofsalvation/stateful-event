@@ -1,6 +1,6 @@
 {
   "name": "stateful-event",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "a tiny stateful eventbus in few lines of js",
   "main": "index.js",
   "directories": {

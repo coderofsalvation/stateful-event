@@ -1,6 +1,7 @@
-bus = function(){
+bus = function(opts){
+  this.opts = opts || {}
   this.channels = []
-  this._state = "normal"
+  this._state = opts ? opts.defaultstate || "normal" : "normal"
   this.debug = false
 }
 
